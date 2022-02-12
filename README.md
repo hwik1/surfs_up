@@ -3,11 +3,12 @@ Report prepared for Module 9 challenge by Hannah Wikum - February 2022
 
 ## Resources
 Data Source: hawaii.sqlite (provided)
+
 Software: Jupyter Notebook, Visual Studio Code, Python 3.7 Anaconda Development Environment with numpy, pandas, sqlalchemy
 ___
 ## Overview
 ### Background
-This analysis was completed for W.Avy to help inform if the proposed surf and ice cream shop in Oahu is sustainable year-round. I used the provided sqlite database with data from 1/1/2010 to 8/23/2017 to compare the statistics for observed temperatures over the years in the month of June versus December.
+This analysis was completed for W. Avy to help inform if the proposed surf and ice cream shop in Oahu is sustainable year-round. I used the provided sqlite database with data from 1/1/2010 to 8/23/2017 to compare the statistics for observed temperatures over the years in the month of June versus December.
 
 ### Analysis
 To complete the statistical analysis, I first had to filter the date column in the Measurements table of the database to isolate observations in either June or December. Since I needed to find temperatures in the same month across multiple years, I used the extract function from sqlalchemy to isolate for the 6th or 12th month of the year. Here is a sample of my code:
@@ -41,7 +42,8 @@ In summary, after conducting the multi-year temperature analysis for the months 
 To expand on the analysis, I ran two additional queries to help aid W. Avy in making a decision if the surf/ice cream shop is a viable year-round business.
 
 _Precipitation_
-Another data point I wanted to add to the analysis involved the number of observations with precipitation (assumed to be rain given the temperature statistics). I used a similar code shown in the Analysis section to filter out observations in the month of June or December, but this time on precipitation instead of observered temperature. Here is my code:
+
+Another data point I wanted to add to the analysis involved the number of observations with precipitation (assumed to be rain given the temperature statistics). I used a similar code shown in the Analysis section to filter out observations in the month of June or December, but this time on precipitation instead of observered temperature. Here is my code and the results:
 
   _Code to Determine % Observations with Rain in June_
 
@@ -49,8 +51,23 @@ Another data point I wanted to add to the analysis involved the number of observ
   
 This section of code returend 54.5% for June and 59.0% for December. Not only is December colder, but precipitation occurs more often than in June. Customers would likely be less inclined to surf if there is precipitation.
 
-__
-To round out the analysis, I added one final query to show
+_Temperature_
+
+To round out the analysis, I added one final query on temperature to determine how consistent average temperatures are across the island in June and December by weather station. I built a query to take the average temperature for the month of June and grouped by station, before ordering the stations by highest to lowest average temperature for the month. I repeated for December by updating the month in the filter(extract()) part of the code to 12 instead of 6. Here is my code and the output:
+
+  _Code to Determine Avg Temp by Station in June_
+ 
+  ![image](https://user-images.githubusercontent.com/93058069/153730413-ae825267-7a1c-49e8-917e-10f4b024b4dd.png)
+
+The results showed the highest average temperatures in June were recorded at station USC00519397 of 77.6 degrees. The lowest average was only 71.9 degrees, which is a difference of over 5 degrees. In December, the highest average temp recorded was 73.2 degrees, while the lowest was 69.3 degrees, which is a smaller variance in averages between stations than in June. Here is the code and results for December:
+
+  _Code to Determine Avg Temp by Station in December_
+  
+  ![image](https://user-images.githubusercontent.com/93058069/153730649-bb925e65-99f9-4809-9130-d54aa8eba4b5.png)
+
+  
+ 
+ 
 
 
    
