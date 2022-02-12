@@ -40,7 +40,17 @@ In summary, after conducting the multi-year temperature analysis for the months 
 
 To expand on the analysis, I ran two additional queries to help aid W. Avy in making a decision if the surf/ice cream shop is a viable year-round business.
 
-_Precipiation_
+_Precipitation_
+Another data point I wanted to add to the analysis involved the number of observations with precipitation (assumed to be rain given the temperature statistics). I used a similar code shown in the Analysis section to filter out observations in the month of June or December, but this time on precipitation instead of observered temperature. Here is my code:
+
+  _Code to Determine % Observations with Rain in June_
+
+  ![image](https://user-images.githubusercontent.com/93058069/153727152-698b2b4a-95c7-48b7-8668-5763e4fbaed6.png)
+  
+This section of code returend 54.5% for June and 59.0% for December. Not only is December colder, but precipitation occurs more often than in June. Customers would likely be less inclined to surf if there is precipitation.
+
+__
+To round out the analysis, I added one final query to show
 
 
    
